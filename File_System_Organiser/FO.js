@@ -9,6 +9,8 @@ const helpModule = require("../commands/help");
 const organizeModule = require("../commands/organize");
 
 const treeModule = require("../commands/tree");
+
+const organizeFolderModule = require("../commands/organizeFolder");
 // const { dir } = require('console')
 
 let input = process.argv.slice(2);
@@ -20,6 +22,9 @@ let command = input_arr[0];
 switch (command) {
   case "tree":
     treeModule.treeKey(input_arr[1]);
+    break;
+  case "organizefolder":
+    organizeFolderModule.organizerFolderKey(input_arr[1]);
     break;
   case "help":
     helpModule.helpFnkey();

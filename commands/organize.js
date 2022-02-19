@@ -24,6 +24,9 @@ let types = {
   app: ["exe", "dmg", "pkg", "deb"],
 };
 
+
+
+
 function organizefn(dirPath) {
     let destPath;
     if (dirPath == undefined) {
@@ -51,7 +54,7 @@ function organizefn(dirPath) {
   
     organize_helper(dirPath, destPath);
   }
-  
+
   function organize_helper(src, dest) {
     let childnames = fs.readdirSync(src);
     // console.log(childnames)
@@ -59,9 +62,9 @@ function organizefn(dirPath) {
     for (let i = 0; i < childnames.length; i++) {
       let childAddress = path.join(src, childnames[i]);
       // console.log(childAddress)
-  
+      
       let isFile = fs.lstatSync(childAddress).isFile();
-  
+      
       if (isFile == true) {
         //   console.log(childAddress + " " + isFile);
         let fileCatgery = getcategory(childnames[i]);
